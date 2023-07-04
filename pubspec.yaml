@@ -10,6 +10,7 @@ dependencies:
   device_preview: ^1.1.0
   flutter:
     sdk: flutter
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +23,6 @@ flutter:
     - assets/Group.png
     - assets/google.png
     - assets/facebook.png
+    - assets/first_image.png
+    - assets/second_image.png
+    - assets/third_image.png

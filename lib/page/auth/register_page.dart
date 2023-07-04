@@ -1,6 +1,6 @@
-import 'package:booking_app/components/button_auth_component.dart';
-import 'package:booking_app/components/form_auth_component.dart';
-import 'package:booking_app/components/provider_button_component.dart';
+import 'package:booking_app/components/auth/button_auth_component.dart';
+import 'package:booking_app/components/auth/form_auth_component.dart';
+import 'package:booking_app/components/auth/provider_button_component.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
