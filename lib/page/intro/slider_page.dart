@@ -1,5 +1,5 @@
-import 'package:booking_app/components/intro/slider_content.dart';
 import 'package:booking_app/constants/intro_text.dart';
+import 'package:booking_app/contoller/intro/image_controller.dart';
 import 'package:booking_app/contoller/intro/indicator_number.dart';
 import 'package:booking_app/contoller/intro/page_builder_controller.dart';
 import 'package:flutter/material.dart';
@@ -20,17 +20,22 @@ class _IntroPageState extends State<IntroPage> {
     final controller = Get.put(PageBuilderController());
     final screenHeight = MediaQuery.sizeOf(context).height;
     final currentNumber = Get.put(IndicatorNumber());
+    final imageController = Get.put(ImageController());
     return Scaffold(
       body: Stack(children: [
-        Align(
-          alignment: screenHeight > 880
-              ? const Alignment(0, -0.7)
-              : const Alignment(0, -0.5),
-          child: Image.asset(
-            'assets/first_image.png',
-            width: screenHeight > 880 ? 380 : 360,
-          ),
-        ),
+        Obx(() => AnimatedOpacity(
+              opacity: 1,
+              duration: const Duration(milliseconds: 200),
+              child: Align(
+                alignment: screenHeight > 880
+                    ? const Alignment(0, -0.7)
+                    : const Alignment(0, -0.5),
+                child: Image.asset(
+                  imageController.imagePath[currentNumber.currentNumber.value],
+                  width: screenHeight > 880 ? 380 : 360,
+                ),
+              ),
+            )),
         Align(
           alignment: const Alignment(0, 0.5),
           child: Container(

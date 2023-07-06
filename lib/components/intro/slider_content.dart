@@ -1,4 +1,4 @@
-import 'package:booking_app/components/intro/indicator_component.dart';
+
 import 'package:flutter/material.dart';
 
 class SliderContent extends StatelessWidget {

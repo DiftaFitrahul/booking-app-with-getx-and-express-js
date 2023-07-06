@@ -24,5 +24,5 @@ class IntroText {
     )
   ];
 
-  IntroText._();
+  const IntroText._();
 }

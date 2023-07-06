@@ -4,8 +4,8 @@ class FormAuthComp extends StatelessWidget {
   final TextEditingController formController;
   final String hintText;
   final Icon leadingIcon;
-  IconButton? trailingButton;
-   FormAuthComp(
+  final IconButton? trailingButton;
+   const FormAuthComp(
       {super.key,
       required this.formController,
       required this.hintText,

@@ -1,5 +1,4 @@
-import 'package:booking_app/page/auth/login_page.dart';
-import 'package:booking_app/page/auth/register_page.dart';
+
 import 'package:booking_app/page/intro/slider_page.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
