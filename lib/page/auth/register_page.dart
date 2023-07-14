@@ -25,9 +25,18 @@ class RegisterPage extends StatelessWidget {
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.arrow_back),
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 5.0),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            weight: 20,
+                            size: 40,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -35,10 +44,13 @@ class RegisterPage extends StatelessWidget {
                     ),
                     const Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w600),
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.w600),
+                          ),
                         )),
                     const SizedBox(
                       height: 20,
@@ -82,7 +94,7 @@ class RegisterPage extends StatelessWidget {
                       height: 30,
                     ),
                     ButtonAuthComp(
-                      title: 'Sign In',
+                      title: 'Sign Up',
                       onPress: () {},
                     ),
                     Padding(
@@ -133,11 +145,13 @@ class RegisterPage extends StatelessWidget {
                                 style: const TextStyle(color: Colors.black),
                                 children: [
                               TextSpan(
-                                  text: 'Sign In',
+                                  text: 'Sign Up',
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 86, 105, 240)),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {})
+                                    ..onTap = () {
+                                      Navigator.pop(context);
+                                    })
                             ])))
                   ],
                 ),

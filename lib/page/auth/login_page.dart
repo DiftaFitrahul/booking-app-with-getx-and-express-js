@@ -1,6 +1,7 @@
 import 'package:booking_app/components/auth/button_auth_component.dart';
 import 'package:booking_app/components/auth/form_auth_component.dart';
 import 'package:booking_app/components/auth/provider_button_component.dart';
+import 'package:booking_app/page/auth/register_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -91,14 +92,22 @@ class LoginPage extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Transform.scale(
-                                        scale: 0.8,
-                                        child: CupertinoSwitch(
-                                          value: true,
-                                          onChanged: (value) {},
-                                          activeColor: Colors.blue,
+                                      Row(children: [
+                                        Transform.scale(
+                                          scale: 0.8,
+                                          child: CupertinoSwitch(
+                                            value: true,
+                                            onChanged: (value) {},
+                                            activeColor: Colors.blue,
+                                          ),
                                         ),
-                                      ),
+                                        Text(
+                                          'Remember Me',
+                                          style: TextStyle(
+                                              color: Colors.black
+                                                  .withOpacity(0.6)),
+                                        )
+                                      ]),
                                       TextButton(
                                           onPressed: () {},
                                           child: Text(
@@ -143,7 +152,7 @@ class LoginPage extends StatelessWidget {
                                         bottom: screenHeight < 880
                                             ? 9
                                             : screenHeight > 920
-                                                ? 80.0
+                                                ? 50.0
                                                 : 30.0),
                                     child: RichText(
                                         text: TextSpan(
@@ -157,7 +166,14 @@ class LoginPage extends StatelessWidget {
                                                   color: Color.fromARGB(
                                                       255, 86, 105, 240)),
                                               recognizer: TapGestureRecognizer()
-                                                ..onTap = () {})
+                                                ..onTap = () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const RegisterPage(),
+                                                      ));
+                                                })
                                         ])))
                               ],
                             ),

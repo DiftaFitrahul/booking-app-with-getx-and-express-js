@@ -2,6 +2,7 @@ import 'package:booking_app/constants/intro_text.dart';
 import 'package:booking_app/contoller/intro/image_controller.dart';
 import 'package:booking_app/contoller/intro/indicator_number.dart';
 import 'package:booking_app/contoller/intro/page_builder_controller.dart';
+import 'package:booking_app/page/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,26 +16,33 @@ class IntroPage extends StatefulWidget {
 }
 
 class _IntroPageState extends State<IntroPage> {
+  final imageController2 = Get.put(ImageController());
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(imageController2.imageIntro[0].image, context);
+    precacheImage(imageController2.imageIntro[1].image, context);
+    precacheImage(imageController2.imageIntro[2].image, context);
+    super.didChangeDependencies();
+  }
+
+  // screenHeight > 880 ? 380 : 360
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(PageBuilderController());
     final screenHeight = MediaQuery.sizeOf(context).height;
     final currentNumber = Get.put(IndicatorNumber());
-    final imageController = Get.put(ImageController());
     return Scaffold(
       body: Stack(children: [
         Obx(() => AnimatedOpacity(
               opacity: 1,
               duration: const Duration(milliseconds: 200),
               child: Align(
-                alignment: screenHeight > 880
-                    ? const Alignment(0, -0.7)
-                    : const Alignment(0, -0.5),
-                child: Image.asset(
-                  imageController.imagePath[currentNumber.currentNumber.value],
-                  width: screenHeight > 880 ? 380 : 360,
-                ),
-              ),
+                  alignment: screenHeight > 880
+                      ? const Alignment(0, -0.7)
+                      : const Alignment(0, -0.5),
+                  child: imageController2
+                      .imageIntro[currentNumber.currentNumber.value]),
             )),
         Align(
           alignment: const Alignment(0, 0.5),
@@ -90,7 +98,14 @@ class _IntroPageState extends State<IntroPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginPage(),
+                              ),
+                            );
+                          },
                           child: const Text(
                             'Skip',
                             style: TextStyle(
@@ -106,7 +121,16 @@ class _IntroPageState extends State<IntroPage> {
                         ),
                         TextButton(
                           onPressed: () {
-                            controller.nextIndex();
+                            if (currentNumber.currentNumber.value < 2) {
+                              controller.nextIndex();
+                            } else {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginPage(),
+                                ),
+                              );
+                            }
                           },
                           child: const Text(
                             'Next',
