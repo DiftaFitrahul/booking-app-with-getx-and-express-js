@@ -10,12 +10,33 @@ dependencies:
   device_preview: ^1.1.0
   flutter:
     sdk: flutter
+  
+  
   get: ^4.6.5
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.3.1
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/google.png
+  android_12:
+    color: "#ffffff"
+    image: assets/google.png
+
+  android: true
+  ios: true
+  web: false
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/facebook.png"
 
 flutter:
   uses-material-design: true

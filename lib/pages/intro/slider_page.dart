@@ -2,7 +2,7 @@ import 'package:booking_app/constants/intro_text.dart';
 import 'package:booking_app/contoller/intro/image_controller.dart';
 import 'package:booking_app/contoller/intro/indicator_number.dart';
 import 'package:booking_app/contoller/intro/page_builder_controller.dart';
-import 'package:booking_app/page/auth/login_page.dart';
+import 'package:booking_app/pages/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
