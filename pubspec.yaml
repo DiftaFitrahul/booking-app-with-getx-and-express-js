@@ -1,25 +1,23 @@
 name: booking_app
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   device_preview: ^1.1.0
+  flutter_native_splash: ^2.3.1
   flutter:
     sdk: flutter
-  
-  
-  get: ^4.6.5
 
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  flutter_native_splash: ^2.3.1
 
 flutter_native_splash:
   color: "#ffffff"
@@ -31,7 +29,6 @@ flutter_native_splash:
   android: true
   ios: true
   web: false
-
 
 flutter_launcher_icons:
   android: true

@@ -1,7 +1,7 @@
-import 'package:booking_app/components/auth/button_auth_component.dart';
-import 'package:booking_app/components/auth/form_auth_component.dart';
-import 'package:booking_app/components/auth/provider_button_component.dart';
-import 'package:booking_app/pages/auth/register_page.dart';
+import 'package:booking_app/view/components/auth/button_auth_component.dart';
+import 'package:booking_app/view/components/auth/form_auth_component.dart';
+import 'package:booking_app/view/components/auth/provider_button_component.dart';
+import 'package:booking_app/view/pages/auth/register_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

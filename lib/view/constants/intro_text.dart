@@ -1,4 +1,4 @@
-import 'package:booking_app/components/intro/slider_content.dart';
+import 'package:booking_app/view/components/intro/slider_content.dart';
 import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
@@ -11,10 +11,8 @@ class IntroText {
           'In this example, were using the BackdropFilter widget to apply the blur effect.',
     ),
     SliderContent(
-      title:
-          'You can use the GoogleMapController to control the map view',
-      subtitle:
-          'Its important to note that the GoogleMap widget',
+      title: 'You can use the GoogleMapController to control the map view',
+      subtitle: 'Its important to note that the GoogleMap widget',
     ),
     SliderContent(
       title:

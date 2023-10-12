@@ -1,5 +1,5 @@
-import 'package:booking_app/components/auth/button_auth_component.dart';
-import 'package:booking_app/components/auth/otp_verification_field_component.dart';
+import 'package:booking_app/view/components/auth/button_auth_component.dart';
+import 'package:booking_app/view/components/auth/otp_verification_field_component.dart';
 import 'package:flutter/material.dart';
 
 class VerificationPage extends StatelessWidget {

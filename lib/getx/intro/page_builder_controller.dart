@@ -1,4 +1,4 @@
-import 'package:booking_app/contoller/intro/indicator_number.dart';
+import 'package:booking_app/getx/intro/indicator_number.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
