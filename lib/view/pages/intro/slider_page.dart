@@ -29,9 +29,9 @@ class _IntroPageState extends State<IntroPage> {
   // screenHeight > 880 ? 380 : 360
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(PageBuilderController());
+    final controller = Get.find<PageBuilderController>();
     final screenHeight = MediaQuery.sizeOf(context).height;
-    final currentNumber = Get.put(IndicatorNumber());
+    final currentNumber = Get.find<IndicatorNumber>();
     return Scaffold(
       body: Stack(children: [
         Obx(() => AnimatedOpacity(

@@ -1,3 +1,4 @@
+import 'package:booking_app/view/bindings/intro_page.dart';
 import 'package:booking_app/view/pages/auth/login_page.dart';
 import 'package:booking_app/view/pages/auth/register_page.dart';
 import 'package:booking_app/view/pages/auth/reset_password_page.dart';
@@ -10,9 +11,9 @@ class Routes {
   const Routes._();
   static final pages = [
     GetPage(
-      name: RoutesName.intro,
-      page: () => const IntroPage(),
-    ),
+        name: RoutesName.intro,
+        page: () => const IntroPage(),
+        binding: IntroPageBinding()),
     GetPage(
       name: RoutesName.login,
       page: () => const LoginPage(),

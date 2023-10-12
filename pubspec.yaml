@@ -44,3 +44,5 @@ flutter:
     - assets/first_image.png
     - assets/second_image.png
     - assets/third_image.png
+    - assets/background/blur_effect.png
+    - assets/background/small_blur_effect.png
