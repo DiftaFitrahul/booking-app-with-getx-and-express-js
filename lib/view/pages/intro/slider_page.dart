@@ -1,4 +1,4 @@
-import 'package:booking_app/view/constants/intro_text.dart';
+import 'package:booking_app/view/constants/intro/intro_text.dart';
 import 'package:booking_app/getx/intro/image_controller.dart';
 import 'package:booking_app/getx/intro/indicator_number.dart';
 import 'package:booking_app/getx/intro/page_builder_controller.dart';

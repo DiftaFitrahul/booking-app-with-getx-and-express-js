@@ -1,4 +1,4 @@
-import 'package:booking_app/view/constants/intro_image.dart';
+import 'package:booking_app/view/constants/intro/intro_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

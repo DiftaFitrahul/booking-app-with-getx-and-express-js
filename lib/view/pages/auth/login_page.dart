@@ -1,10 +1,13 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
+import 'package:booking_app/view/constants/auth/background_effect_const.dart';
 import 'package:booking_app/view/pages/auth/register_page.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -18,7 +21,16 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-          child: LayoutBuilder(
+          child: Stack(
+        children: [
+          Align(
+            alignment: const Alignment(1, 1),
+            child: Image.asset(
+              AuthBackgroundEffect.blurEffect,
+              fit: BoxFit.contain,
+            ),
+          ),
+          LayoutBuilder(
               builder: (_, constraints) => SingleChildScrollView(
                     child: ConstrainedBox(
                       constraints:
@@ -109,7 +121,10 @@ class LoginPage extends StatelessWidget {
                                         )
                                       ]),
                                       TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Get.toNamed(
+                                                RoutesName.resetPassword);
+                                          },
                                           child: Text(
                                             'Forgot Password?',
                                             style: TextStyle(
@@ -167,12 +182,8 @@ class LoginPage extends StatelessWidget {
                                                       255, 86, 105, 240)),
                                               recognizer: TapGestureRecognizer()
                                                 ..onTap = () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            const RegisterPage(),
-                                                      ));
+                                                  Get.toNamed(
+                                                      RoutesName.register);
                                                 })
                                         ])))
                               ],
@@ -181,7 +192,9 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ))),
+                  )),
+        ],
+      )),
     );
   }
 }

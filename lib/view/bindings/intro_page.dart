@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class IntroPageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(() => PageBuilderController());
-    Get.put(() => IndicatorNumber());
+    Get.lazyPut(() => PageBuilderController());
+    Get.lazyPut(() => IndicatorNumber());
   }
 }

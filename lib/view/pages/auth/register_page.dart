@@ -1,8 +1,10 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -29,7 +31,7 @@ class RegisterPage extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 5.0),
                         child: IconButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            Get.back();
                           },
                           icon: const Icon(
                             Icons.arrow_back,
@@ -95,7 +97,9 @@ class RegisterPage extends StatelessWidget {
                     ),
                     ButtonAuthComp(
                       title: 'Sign Up',
-                      onPress: () {},
+                      onPress: () {
+                        Get.toNamed(RoutesName.verification);
+                      },
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(

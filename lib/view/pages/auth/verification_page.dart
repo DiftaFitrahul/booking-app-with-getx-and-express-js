@@ -1,6 +1,7 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/otp_verification_field_component.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class VerificationPage extends StatelessWidget {
   const VerificationPage({super.key});
@@ -20,7 +21,9 @@ class VerificationPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 5.0),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.back();
+                      },
                       icon: const Icon(
                         Icons.arrow_back,
                         weight: 20,
