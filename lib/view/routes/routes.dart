@@ -1,3 +1,4 @@
+import 'package:booking_app/view/bindings/home_page.dart';
 import 'package:booking_app/view/bindings/intro_page.dart';
 import 'package:booking_app/view/pages/auth/login_page.dart';
 import 'package:booking_app/view/pages/auth/register_page.dart';
@@ -34,6 +35,7 @@ class Routes {
     GetPage(
       name: RoutesName.home,
       page: () => const HomePage(),
+      binding: HomePageBinding(),
     )
   ];
 }
