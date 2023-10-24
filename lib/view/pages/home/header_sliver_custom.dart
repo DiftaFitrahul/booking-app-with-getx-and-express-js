@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class HomeSliverAppbar extends SliverPersistentHeaderDelegate {
   final homePageController = Get.find<AppbarController>();
   static const _maxExtent = 225.0;
-  static const _minExtent = 150.0;
+  static const _minExtent = 140.0;
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
@@ -16,6 +16,7 @@ class HomeSliverAppbar extends SliverPersistentHeaderDelegate {
         ((_maxExtent - shrinkOffset - _minExtent) / (_maxExtent - _minExtent))
             .clamp(0, 1);
     return Container(
+      padding: const EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
         color: Color(0xFF4A43EC),
         borderRadius: BorderRadius.only(

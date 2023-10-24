@@ -1,3 +1,4 @@
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,20 +13,21 @@ class SearchAppbar extends StatelessWidget {
         duration: const Duration(milliseconds: 100),
         padding: EdgeInsets.lerp(
             const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            const EdgeInsets.only(bottom: 30),
+            const EdgeInsets.only(bottom: 35),
             1 - percentage),
         alignment: Alignment.lerp(
           Alignment.centerLeft,
           Alignment.center,
           1 - percentage,
         ),
-        child: SizedBox(
+        child: Container(
+            padding: const EdgeInsets.only(top: 20),
             width: widthScreen * 0.65,
             child: TextField(
               onTapOutside: (event) {
                 FocusScope.of(context).requestFocus(FocusNode());
               },
-              style: TextStyle(fontSize: 23),
+              style: const TextStyle(fontSize: 23),
               decoration: InputDecoration(
                 // fillColor: Colors.amber,
                 // filled: true,
@@ -37,12 +39,14 @@ class SearchAppbar extends StatelessWidget {
                   size: 25,
                 ),
                 contentPadding:
-                    EdgeInsets.all(20.0), // Increase content padding
+                    const EdgeInsets.all(20.0), // Increase content padding
                 isDense: true, //
                 hintText: "| Search...",
 
                 hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.3), fontSize: 23),
+                    fontFamily: airBnbCereal,
+                    color: Colors.white.withOpacity(0.3),
+                    fontSize: 23),
               ),
             )));
   }

@@ -1,4 +1,5 @@
 import 'package:booking_app/getx/home/appbar_controller.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,18 +15,21 @@ class FilterAppbar extends StatelessWidget {
       padding: EdgeInsets.lerp(
           const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           const EdgeInsets.only(
-            bottom: 30,
+            bottom: 35,
             right: 20,
           ),
           1 - percentage),
       alignment: Alignment.centerRight,
       child: AnimatedContainer(
-        width: percentage == 0.0 ? 37 : 87,
-        height: 37,
-        padding: const EdgeInsets.only(left: 5),
-        duration: const Duration(milliseconds: 230),
+        width: percentage == 0.0 ? 36 : 89,
+        height: 36,
+        padding: const EdgeInsets.only(
+          left: 5,
+        ),
+        margin: const EdgeInsets.only(top: 20),
+        duration: const Duration(milliseconds: 225),
         decoration: BoxDecoration(
-          color: Color(0xFF5D56F3),
+          color: const Color(0xFF5D56F3),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -39,14 +43,14 @@ class FilterAppbar extends StatelessWidget {
                 ),
                 child: const Icon(
                   Icons.filter_list,
-                  size: 22,
+                  size: 19,
                   color: Color(0xFF5D56F3),
                 )),
             Obx(() {
               if (percentage == 0.0) {
                 homePageController.isShowTextFilter.value = false;
               } else {
-                Future.delayed(const Duration(milliseconds: 280), () {
+                Future.delayed(const Duration(milliseconds: 275), () {
                   homePageController.isShowTextFilter.value = true;
                 });
               }
@@ -55,7 +59,10 @@ class FilterAppbar extends StatelessWidget {
                     left: homePageController.isShowTextFilter.value ? 5.0 : 0),
                 child: Text(
                   homePageController.isShowTextFilter.value ? "Filters" : "",
-                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  style: const TextStyle(
+                      fontFamily: airBnbCereal,
+                      fontSize: 14,
+                      color: Colors.white),
                 ),
               );
             }),
