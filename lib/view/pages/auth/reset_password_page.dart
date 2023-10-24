@@ -1,5 +1,7 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +41,10 @@ class ResetPasswordPage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Reset Password',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontFamily: airBnbCereal,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600),
                   )),
               const SizedBox(
                 height: 15,
@@ -48,7 +53,7 @@ class ResetPasswordPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Please enter your email address to",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontFamily: airBnbCereal, fontSize: 16),
                 ),
               ),
               const SizedBox(
@@ -58,7 +63,7 @@ class ResetPasswordPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "request a password reset",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontFamily: airBnbCereal, fontSize: 16),
                 ),
               ),
               const SizedBox(
@@ -72,7 +77,11 @@ class ResetPasswordPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              ButtonAuthComp(title: 'Send', onPress: () {}),
+              ButtonAuthComp(
+                  title: 'Send',
+                  onPress: () {
+                    Get.toNamed(RoutesName.verification);
+                  }),
             ],
           ),
         ),

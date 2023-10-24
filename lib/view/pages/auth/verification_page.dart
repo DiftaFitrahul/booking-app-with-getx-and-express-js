@@ -1,5 +1,6 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/otp_verification_field_component.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,7 +39,10 @@ class VerificationPage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Verification',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontFamily: airBnbCereal,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600),
                   )),
               const SizedBox(
                 height: 15,
@@ -47,7 +51,7 @@ class VerificationPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "We've send you the verification",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontFamily: airBnbCereal, fontSize: 16),
                 ),
               ),
               const SizedBox(
@@ -57,7 +61,7 @@ class VerificationPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "code on example123@mail.com",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontFamily: airBnbCereal, fontSize: 16),
                 ),
               ),
               const SizedBox(
@@ -86,14 +90,20 @@ class VerificationPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Re-send code in'),
+                    Text(
+                      'Re-send code in',
+                      style: TextStyle(
+                        fontFamily: airBnbCereal,
+                      ),
+                    ),
                     SizedBox(
                       width: 5,
                     ),
                     Text(
                       '0:20',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 86, 105, 240)),
+                      style: TextStyle(
+                          fontFamily: airBnbCereal,
+                          color: Color.fromARGB(255, 86, 105, 240)),
                     )
                   ],
                 ),

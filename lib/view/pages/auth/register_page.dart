@@ -1,6 +1,7 @@
 import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,9 @@ class RegisterPage extends StatelessWidget {
                           child: Text(
                             'Sign Up',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w600),
+                                fontFamily: airBnbCereal,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w600),
                           ),
                         )),
                     const SizedBox(
@@ -112,6 +115,7 @@ class RegisterPage extends StatelessWidget {
                       child: Text(
                         'OR',
                         style: TextStyle(
+                            fontFamily: airBnbCereal,
                             fontSize: screenHeight < 880 ? 17 : 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.grey),
@@ -119,7 +123,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                     ProviderLogButton(
                       title: 'Login with Google',
-                      logoPath: 'assets/google.png',
+                      logoPath: 'assets/image/google.png',
                       onPress: () {},
                     ),
                     SizedBox(
@@ -131,7 +135,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                     ProviderLogButton(
                       title: 'Login with Facebook',
-                      logoPath: 'assets/facebook.png',
+                      logoPath: 'assets/image/facebook.png',
                       onPress: () {},
                     ),
                     const Expanded(child: SizedBox()),
@@ -146,15 +150,19 @@ class RegisterPage extends StatelessWidget {
                         child: RichText(
                             text: TextSpan(
                                 text: 'Already have an account? ',
-                                style: const TextStyle(color: Colors.black),
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: airBnbCereal,
+                                ),
                                 children: [
                               TextSpan(
                                   text: 'Sign Up',
                                   style: const TextStyle(
+                                      fontFamily: airBnbCereal,
                                       color: Color.fromARGB(255, 86, 105, 240)),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
-                                      Navigator.pop(context);
+                                      Get.back();
                                     })
                             ])))
                   ],

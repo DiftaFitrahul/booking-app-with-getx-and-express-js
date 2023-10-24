@@ -186,6 +186,7 @@ class LoginPage extends StatelessWidget {
                                           TextSpan(
                                               text: 'Sign Up',
                                               style: const TextStyle(
+                                                  fontFamily: airBnbCereal,
                                                   color: Color.fromARGB(
                                                       255, 86, 105, 240)),
                                               recognizer: TapGestureRecognizer()
