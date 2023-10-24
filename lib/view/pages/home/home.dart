@@ -48,11 +48,11 @@ class HomePage extends StatelessWidget {
         // ),
         SliverList(
             delegate: SliverChildBuilderDelegate(
-          childCount: 20,
+          childCount: 10,
           (context, index) => Container(
             height: 100,
             color: Colors.red,
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
           ),
         ))
       ]),

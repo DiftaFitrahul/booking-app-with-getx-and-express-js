@@ -12,22 +12,24 @@ class SearchAppbar extends StatelessWidget {
     return AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         padding: EdgeInsets.lerp(
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            const EdgeInsets.only(bottom: 35),
+            const EdgeInsets.only(left: 16, top: 20, bottom: 20),
+            const EdgeInsets.only(bottom: 35, left: 12),
             1 - percentage),
         alignment: Alignment.lerp(
           Alignment.centerLeft,
           Alignment.center,
           1 - percentage,
         ),
-        child: Container(
-            padding: const EdgeInsets.only(top: 20),
-            width: widthScreen * 0.65,
+        child: AnimatedContainer(
+            duration: const Duration(milliseconds: 225),
+            padding: EdgeInsets.only(top: percentage * 35),
+            width: widthScreen * 0.65 + 20 * (1 - percentage),
             child: TextField(
               onTapOutside: (event) {
                 FocusScope.of(context).requestFocus(FocusNode());
               },
-              style: const TextStyle(fontSize: 23),
+              style: const TextStyle(
+                  fontSize: 23, fontFamily: airBnbCereal, color: Colors.white),
               decoration: InputDecoration(
                 // fillColor: Colors.amber,
                 // filled: true,

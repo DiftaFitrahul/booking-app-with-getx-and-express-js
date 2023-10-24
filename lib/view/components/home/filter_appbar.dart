@@ -13,10 +13,10 @@ class FilterAppbar extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 100),
       padding: EdgeInsets.lerp(
-          const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          const EdgeInsets.only(right: 16, top: 20, bottom: 20),
           const EdgeInsets.only(
             bottom: 35,
-            right: 20,
+            right: 16,
           ),
           1 - percentage),
       alignment: Alignment.centerRight,
@@ -26,7 +26,7 @@ class FilterAppbar extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: 5,
         ),
-        margin: const EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: percentage * 35),
         duration: const Duration(milliseconds: 225),
         decoration: BoxDecoration(
           color: const Color(0xFF5D56F3),
@@ -50,7 +50,7 @@ class FilterAppbar extends StatelessWidget {
               if (percentage == 0.0) {
                 homePageController.isShowTextFilter.value = false;
               } else {
-                Future.delayed(const Duration(milliseconds: 275), () {
+                Future.delayed(const Duration(milliseconds: 284), () {
                   homePageController.isShowTextFilter.value = true;
                 });
               }
