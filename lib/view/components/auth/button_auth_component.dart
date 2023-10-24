@@ -1,3 +1,4 @@
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
 class ButtonAuthComp extends StatelessWidget {
@@ -27,7 +28,9 @@ class ButtonAuthComp extends StatelessWidget {
                   child: Text(
                     title,
                     style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.normal),
+                        fontFamily: airBnbCereal,
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal),
                   ),
                 )),
                 Align(

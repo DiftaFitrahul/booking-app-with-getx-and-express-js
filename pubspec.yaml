@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
   get: ^4.6.5
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
@@ -38,11 +39,22 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/Group.png
-    - assets/google.png
-    - assets/facebook.png
-    - assets/first_image.png
-    - assets/second_image.png
-    - assets/third_image.png
-    - assets/background/blur_effect.png
-    - assets/background/small_blur_effect.png
+    - assets/image/Group.png
+    - assets/image/google.png
+    - assets/image/facebook.png
+    - assets/image/first_image.png
+    - assets/image/second_image.png
+    - assets/image/third_image.png
+    - assets/image/background/blur_effect.png
+    - assets/image/background/small_blur_effect.png
+    - assets/image/home/menu_icon.png
+
+  fonts:
+    - family: AirbnbCereal
+      fonts:
+        - asset: assets/font/AirbnbCereal_W_Bd.otf
+        - asset: assets/font/AirbnbCereal_W_Bk.otf
+        - asset: assets/font/AirbnbCereal_W_Blk.otf
+        - asset: assets/font/AirbnbCereal_W_Lt.otf
+        - asset: assets/font/AirbnbCereal_W_Md.otf
+        - asset: assets/font/AirbnbCereal_W_XBd.otf

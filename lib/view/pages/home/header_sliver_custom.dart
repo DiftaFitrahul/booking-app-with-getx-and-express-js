@@ -1,6 +1,7 @@
 import 'package:booking_app/getx/home/appbar_controller.dart';
 import 'package:booking_app/view/components/home/filter_appbar.dart';
 import 'package:booking_app/view/components/home/search_appbar.dart';
+import 'package:booking_app/view/components/home/top_widget_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class HomeSliverAppbar extends SliverPersistentHeaderDelegate {
             .clamp(0, 1);
     return Container(
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Color(0xFF4A43EC),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30.0 - 30 * (1 - percentage)),
           bottomRight: Radius.circular(30.0 - 30 * (1 - percentage)),
@@ -25,40 +26,7 @@ class HomeSliverAppbar extends SliverPersistentHeaderDelegate {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Align(
-              alignment: Alignment.topCenter,
-              child: SafeArea(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.menu),
-                      onPressed: () {},
-                    ),
-                    AnimatedOpacity(
-                      opacity: percentage,
-                      duration: const Duration(milliseconds: 100),
-                      child: InkWell(
-                        onTap: percentage < 0.8 ? null : () {},
-                        child: const Text(
-                          "Home",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    percentage == 0.0
-                        ? const SizedBox()
-                        : IconButton(
-                            icon: const Icon(Icons.search),
-                            onPressed: () {},
-                          ),
-                  ],
-                ),
-              )),
+          TopWidgetAppbar(percentage: percentage),
           SearchAppbar(percentage: percentage),
           FilterAppbar(percentage: percentage),
           Align(

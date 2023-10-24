@@ -1,3 +1,4 @@
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
 class FormAuthComp extends StatelessWidget {
@@ -18,7 +19,10 @@ class FormAuthComp extends StatelessWidget {
       controller: formController,
       decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.black.withOpacity(0.4)),
+          hintStyle: TextStyle(
+            color: Colors.black.withOpacity(0.4),
+            fontFamily: airBnbCereal,
+          ),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(

@@ -2,6 +2,7 @@ import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
 import 'package:booking_app/view/constants/auth/background_effect_const.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -51,7 +52,7 @@ class LoginPage extends StatelessWidget {
                                   height: screenHeight < 880 ? 60 : 70,
                                   width: screenHeight < 880 ? 60 : 70,
                                   child: Image.asset(
-                                    'assets/Group.png',
+                                    'assets/image/Group.png',
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -61,6 +62,7 @@ class LoginPage extends StatelessWidget {
                                 const Text(
                                   'EventHub',
                                   style: TextStyle(
+                                      fontFamily: airBnbCereal,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 40),
                                 ),
@@ -72,6 +74,7 @@ class LoginPage extends StatelessWidget {
                                     child: Text(
                                       'Sign In',
                                       style: TextStyle(
+                                          fontFamily: airBnbCereal,
                                           fontSize: 25,
                                           fontWeight: FontWeight.w600),
                                     )),
@@ -115,6 +118,7 @@ class LoginPage extends StatelessWidget {
                                         Text(
                                           'Remember Me',
                                           style: TextStyle(
+                                              fontFamily: airBnbCereal,
                                               color: Colors.black
                                                   .withOpacity(0.6)),
                                         )
@@ -127,6 +131,7 @@ class LoginPage extends StatelessWidget {
                                           child: Text(
                                             'Forgot Password?',
                                             style: TextStyle(
+                                                fontFamily: airBnbCereal,
                                                 color: Colors.black
                                                     .withOpacity(0.6)),
                                           ))
@@ -146,6 +151,7 @@ class LoginPage extends StatelessWidget {
                                   child: Text(
                                     'OR',
                                     style: TextStyle(
+                                        fontFamily: airBnbCereal,
                                         fontSize: screenHeight < 880 ? 17 : 20,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.grey),
@@ -153,13 +159,13 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 ProviderLogButton(
                                   title: 'Login with Google',
-                                  logoPath: 'assets/google.png',
+                                  logoPath: 'assets/image/google.png',
                                   onPress: () {},
                                 ),
                                 SizedBox(height: screenHeight < 880 ? 15 : 20),
                                 ProviderLogButton(
                                   title: 'Login with Facebook',
-                                  logoPath: 'assets/facebook.png',
+                                  logoPath: 'assets/image/facebook.png',
                                   onPress: () {},
                                 ),
                                 const Expanded(child: SizedBox()),
@@ -174,6 +180,7 @@ class LoginPage extends StatelessWidget {
                                         text: TextSpan(
                                             text: "Don't have an account? ",
                                             style: const TextStyle(
+                                                fontFamily: airBnbCereal,
                                                 color: Colors.black),
                                             children: [
                                           TextSpan(

@@ -1,3 +1,4 @@
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
 class ProviderLogButton extends StatelessWidget {
@@ -39,6 +40,7 @@ class ProviderLogButton extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
+                      fontFamily: airBnbCereal,
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.w400),

@@ -5,20 +5,19 @@ import 'package:flutter/foundation.dart' show immutable;
 class IntroText {
   static const List<SliderContent> content = [
     SliderContent(
-      title:
-          'Heres an example of how you can achieve a blur effect on an image',
+      title: 'Explore Upcoming and Nearby Events',
       subtitle:
-          'In this example, were using the BackdropFilter widget to apply the blur effect.',
+          'In publising and graphic design, Lorem ipsum is a placeholder text commonly',
     ),
     SliderContent(
-      title: 'You can use the GoogleMapController to control the map view',
-      subtitle: 'Its important to note that the GoogleMap widget',
+      title: 'Web Have Modern Events Calendar Feature',
+      subtitle:
+          'In publising and graphic design, Lorem ipsum is a placeholder text commonly',
     ),
     SliderContent(
-      title:
-          'get an API key from Google Cloud. Youll need to add this key in the appropriate',
+      title: 'To Look Up More Events or Activities Nearby By Map',
       subtitle:
-          'AndroidManifest.xml for Android, AppDelegate.m or AppDelegate.swift for iOS',
+          'In publising and graphic design, Lorem ipsum is a placeholder text commonly',
     )
   ];
 

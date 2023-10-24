@@ -6,7 +6,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double _appBarBottomBtnPosition = 24.0;
     return Scaffold(
       drawer: const Column(),
       body: CustomScrollView(slivers: [

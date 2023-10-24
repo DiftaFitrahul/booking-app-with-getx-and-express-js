@@ -1,4 +1,4 @@
-
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
 class SliderContent extends StatelessWidget {
@@ -22,6 +22,7 @@ class SliderContent extends StatelessWidget {
           title,
           textAlign: TextAlign.center,
           style: TextStyle(
+            fontFamily: airBnbCereal,
             fontSize: screenHeight < 800
                 ? 20
                 : screenHeight < 880
@@ -38,6 +39,7 @@ class SliderContent extends StatelessWidget {
           subtitle,
           textAlign: TextAlign.center,
           style: TextStyle(
+            fontFamily: airBnbCereal,
             color: Colors.white,
             fontSize: screenHeight < 800
                 ? 13

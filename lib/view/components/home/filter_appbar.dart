@@ -12,20 +12,20 @@ class FilterAppbar extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 100),
       padding: EdgeInsets.lerp(
-          const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           const EdgeInsets.only(
             bottom: 30,
-            right: 16,
+            right: 20,
           ),
           1 - percentage),
       alignment: Alignment.centerRight,
       child: AnimatedContainer(
-        width: percentage == 0.0 ? 40 : 93,
-        height: 40,
+        width: percentage == 0.0 ? 37 : 87,
+        height: 37,
         padding: const EdgeInsets.only(left: 5),
         duration: const Duration(milliseconds: 230),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color(0xFF5D56F3),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -34,11 +34,13 @@ class FilterAppbar extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 63, 71, 63),
+                  color: const Color(0xFFA29EF0),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Icon(
                   Icons.filter_list,
+                  size: 22,
+                  color: Color(0xFF5D56F3),
                 )),
             Obx(() {
               if (percentage == 0.0) {
@@ -50,13 +52,10 @@ class FilterAppbar extends StatelessWidget {
               }
               return Container(
                 padding: EdgeInsets.only(
-                    left: homePageController.isShowTextFilter.value ? 8.0 : 0),
+                    left: homePageController.isShowTextFilter.value ? 5.0 : 0),
                 child: Text(
-                  homePageController.isShowTextFilter.value ? "Filter" : "",
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  homePageController.isShowTextFilter.value ? "Filters" : "",
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
                 ),
               );
             }),
