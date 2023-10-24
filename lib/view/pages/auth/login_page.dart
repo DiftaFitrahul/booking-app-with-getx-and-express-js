@@ -2,7 +2,6 @@ import 'package:booking_app/view/components/auth/button_auth_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
 import 'package:booking_app/view/constants/auth/background_effect_const.dart';
-import 'package:booking_app/view/pages/auth/register_page.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -137,7 +136,9 @@ class LoginPage extends StatelessWidget {
                                 SizedBox(height: screenHeight < 880 ? 10 : 20),
                                 ButtonAuthComp(
                                   title: 'Sign In',
-                                  onPress: () {},
+                                  onPress: () {
+                                    Get.offNamed(RoutesName.home);
+                                  },
                                 ),
                                 Padding(
                                   padding: EdgeInsets.symmetric(

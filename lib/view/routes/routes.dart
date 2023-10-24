@@ -3,6 +3,7 @@ import 'package:booking_app/view/pages/auth/login_page.dart';
 import 'package:booking_app/view/pages/auth/register_page.dart';
 import 'package:booking_app/view/pages/auth/reset_password_page.dart';
 import 'package:booking_app/view/pages/auth/verification_page.dart';
+import 'package:booking_app/view/pages/home/home.dart';
 import 'package:booking_app/view/pages/intro/slider_page.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:get/get.dart';
@@ -29,6 +30,10 @@ class Routes {
     GetPage(
       name: RoutesName.verification,
       page: () => const VerificationPage(),
+    ),
+    GetPage(
+      name: RoutesName.home,
+      page: () => const HomePage(),
     )
   ];
 }
