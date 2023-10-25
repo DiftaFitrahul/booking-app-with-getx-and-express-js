@@ -2,29 +2,37 @@ import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
 class HeaderEventTitle extends StatelessWidget {
-  const HeaderEventTitle({super.key});
+  const HeaderEventTitle({
+    this.topPadding = 33,
+    super.key,
+    required this.title,
+    required this.onTapped,
+  });
+  final String title;
+  final VoidCallback onTapped;
+  final double topPadding;
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: Padding(
-      padding: const EdgeInsets.only(
-        top: 33,
+      padding: EdgeInsets.only(
+        top: topPadding,
         bottom: 13,
         left: 18,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Upcoming Events',
-            style: TextStyle(
+          Text(
+            title,
+            style: const TextStyle(
                 fontFamily: airBnbCereal,
                 fontSize: 20,
                 fontWeight: FontWeight.w500),
           ),
           TextButton(
-              onPressed: () {},
+              onPressed: onTapped,
               child: const Row(
                 children: [
                   Text(

@@ -1,29 +1,28 @@
-import 'package:booking_app/model/repository/home/event.dart';
 import 'package:booking_app/view/components/home/card_event.dart';
 import 'package:flutter/material.dart';
 
 class ListEventCard extends StatelessWidget {
-  const ListEventCard({super.key});
+  const ListEventCard({super.key, required this.data});
+  final List<Map<String, String>> data;
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: Container(
-      height: 310,
+      height: 307,
       margin: const EdgeInsets.only(left: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: EventRepository.data.length,
+        itemCount: data.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 10.0),
           child: CardEvent(
-            title: EventRepository.data[index]['title'] ?? "",
-            date: EventRepository.data[index]['date'] ?? "",
-            month: EventRepository.data[index]['month'] ?? "",
-            eventPath: EventRepository.data[index]['image'] ?? '',
-            numberOfPeople:
-                int.parse(EventRepository.data[index]['numberOfPeople'] ?? "0"),
-            place: EventRepository.data[index]['place'] ?? '',
+            title: data[index]['title'] ?? "",
+            date: data[index]['date'] ?? "",
+            month: data[index]['month'] ?? "",
+            eventPath: data[index]['image'] ?? '',
+            numberOfPeople: int.parse(data[index]['numberOfPeople'] ?? "0"),
+            place: data[index]['place'] ?? '',
             onTapped: () {
               print('=============================');
               print('card tapped');
