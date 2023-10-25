@@ -23,16 +23,8 @@ class ListEventCard extends StatelessWidget {
             eventPath: data[index]['image'] ?? '',
             numberOfPeople: int.parse(data[index]['numberOfPeople'] ?? "0"),
             place: data[index]['place'] ?? '',
-            onTapped: () {
-              print('=============================');
-              print('card tapped');
-              print('=============================');
-            },
-            onBookmarkTapped: () {
-              print('---------------------------');
-              print('bookmark tapped');
-              print('---------------------------');
-            },
+            onTapped: () {},
+            onBookmarkTapped: () {},
           ),
         ),
       ),

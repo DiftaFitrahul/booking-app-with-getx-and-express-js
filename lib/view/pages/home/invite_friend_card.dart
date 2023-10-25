@@ -1,7 +1,5 @@
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
-import 'package:booking_app/view/constants/home/event_image.dart';
 import 'package:booking_app/view/constants/home/invite_friend.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InviteFriendCard extends StatelessWidget {
