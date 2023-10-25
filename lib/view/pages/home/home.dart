@@ -1,5 +1,6 @@
 import 'package:booking_app/model/repository/home/event.dart';
 import 'package:booking_app/view/components/home/header_event_title.dart';
+import 'package:booking_app/view/pages/home/bottom_padding.dart';
 import 'package:booking_app/view/pages/home/header_sliver_custom.dart';
 import 'package:booking_app/view/pages/home/invite_friend_card.dart';
 import 'package:booking_app/view/pages/home/list_event_card.dart';
@@ -31,15 +32,7 @@ class HomePage extends StatelessWidget {
             onTapped: () {},
           ),
           const ListEventCard(data: EventRepository.nearbyYou),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            childCount: 10,
-            (context, index) => Container(
-              height: 100,
-              color: Colors.red,
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            ),
-          ))
+          const BottomHomePadding()
         ]),
       ),
     );
