@@ -22,7 +22,7 @@ class SearchAppbar extends StatelessWidget {
         ),
         child: AnimatedContainer(
             duration: const Duration(milliseconds: 225),
-            padding: EdgeInsets.only(top: percentage * 40),
+            padding: EdgeInsets.only(top: percentage * 43),
             width: widthScreen * 0.65 + 20 * (1 - percentage),
             child: TextField(
               onTapOutside: (event) {

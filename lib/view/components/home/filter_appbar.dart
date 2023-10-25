@@ -26,7 +26,7 @@ class FilterAppbar extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: 5,
         ),
-        margin: EdgeInsets.only(top: percentage * 40),
+        margin: EdgeInsets.only(top: percentage * 43),
         duration: const Duration(milliseconds: 225),
         decoration: BoxDecoration(
           color: const Color(0xFF5D56F3),

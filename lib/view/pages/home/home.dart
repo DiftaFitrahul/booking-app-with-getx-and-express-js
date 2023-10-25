@@ -1,3 +1,4 @@
+import 'package:booking_app/view/components/home/header_event_title.dart';
 import 'package:booking_app/view/pages/home/header_sliver_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -13,39 +14,7 @@ class HomePage extends StatelessWidget {
           delegate: HomeSliverAppbar(),
           pinned: true,
         ),
-
-        // SliverAppBar(
-        //   elevation: 0,
-        //   pinned: true,
-        //   expandedHeight: 200,
-        //   bottom: PreferredSize(
-        //     preferredSize: const Size.fromHeight(30),
-        //     child: Transform.translate(
-        //       offset: const Offset(0, _appBarBottomBtnPosition),
-        //       child: ElevatedButton(
-        //         child: Text("Click Here"),
-        //         onPressed: () {},
-        //       ),
-        //     ),
-        //   ),
-        // ),
-        // SliverToBoxAdapter(
-        //   child: Container(
-        //     color: Colors.white,
-        //     height: 15,
-        //     child: Container(
-        //       height: 15,
-        //       decoration: BoxDecoration(
-        //         border: Border.all(width: 0, color: Colors.blue),
-        //         color: Colors.blue,
-        //         borderRadius: const BorderRadius.only(
-        //           bottomLeft: Radius.circular(20.0),
-        //           bottomRight: Radius.circular(20.0),
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),
+        const HeaderEventTitle(),
         SliverList(
             delegate: SliverChildBuilderDelegate(
           childCount: 10,
