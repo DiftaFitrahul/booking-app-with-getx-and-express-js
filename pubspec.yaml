@@ -48,6 +48,14 @@ flutter:
     - assets/image/background/blur_effect.png
     - assets/image/background/small_blur_effect.png
     - assets/image/home/menu_icon.png
+    - assets/image/home/events/event1.png
+    - assets/image/home/events/event2.png
+    - assets/image/home/events/event3.png
+    - assets/image/home/events/event4.png
+    - assets/image/home/events/person1.png
+    - assets/image/home/events/person2.png
+    - assets/image/home/events/person3.png
+    - assets/image/home/events/pin.png
 
   fonts:
     - family: AirbnbCereal

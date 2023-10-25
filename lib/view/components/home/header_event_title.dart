@@ -9,10 +9,9 @@ class HeaderEventTitle extends StatelessWidget {
     return SliverToBoxAdapter(
         child: Padding(
       padding: const EdgeInsets.only(
-        top: 30,
-        bottom: 20,
-        left: 16,
-        right: 16,
+        top: 33,
+        bottom: 13,
+        left: 18,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,7 +20,7 @@ class HeaderEventTitle extends StatelessWidget {
             'Upcoming Events',
             style: TextStyle(
                 fontFamily: airBnbCereal,
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.w500),
           ),
           TextButton(
