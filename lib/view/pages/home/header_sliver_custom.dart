@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class HomeSliverAppbar extends SliverPersistentHeaderDelegate {
   final homePageController = Get.find<AppbarController>();
-  static const _maxExtent = 215.0;
+  static const _maxExtent = 210.0;
   static const _minExtent = 160.0;
   @override
   Widget build(

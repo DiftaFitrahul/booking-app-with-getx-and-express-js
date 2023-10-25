@@ -156,7 +156,7 @@ class RegisterPage extends StatelessWidget {
                                 ),
                                 children: [
                               TextSpan(
-                                  text: 'Sign Up',
+                                  text: 'Sign In',
                                   style: const TextStyle(
                                       fontFamily: airBnbCereal,
                                       color: Color.fromARGB(255, 86, 105, 240)),

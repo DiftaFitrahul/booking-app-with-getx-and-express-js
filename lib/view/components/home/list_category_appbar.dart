@@ -13,7 +13,7 @@ class ListCategoryAppbar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 7),
         child: Transform.translate(
-            offset: Offset(0, 30.0 - 30 * (1 - percentage)),
+            offset: Offset(0, 27.0 - 27 * (1 - percentage)),
             child: SizedBox(
               height: 50,
               child: ListView(
