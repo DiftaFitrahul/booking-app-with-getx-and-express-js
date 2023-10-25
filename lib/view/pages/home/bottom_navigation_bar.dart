@@ -1,6 +1,8 @@
+import 'package:booking_app/getx/home/drawer_controller.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FABBottomAppBar extends StatefulWidget {
   FABBottomAppBar({
@@ -34,6 +36,7 @@ class FABBottomAppBar extends StatefulWidget {
 
 class FABBottomAppBarState extends State<FABBottomAppBar> {
   int _selectedIndex = 0;
+  final drawerController = Get.find<DrawerControllerGetx>();
 
   _updateIndex(int index) {
     widget.onTabSelected(index);
@@ -54,15 +57,26 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
 
     items.insert(items.length >> 1, _buildMiddleTabItem());
 
-    return BottomAppBar(
-      shape: widget.notchedShape,
-      color: widget.backgroundColor,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: items,
-      ),
-    );
+    return Obx(() {
+      return ClipRRect(
+        borderRadius: BorderRadius.only(
+          bottomLeft:
+              Radius.circular(drawerController.isDrawerOpen.value ? 33.0 : 0),
+          bottomRight:
+              Radius.circular(drawerController.isDrawerOpen.value ? 33.0 : 0),
+        ),
+        child: BottomAppBar(
+          elevation: 0,
+          shape: widget.notchedShape,
+          color: widget.backgroundColor,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: items,
+          ),
+        ),
+      );
+    });
   }
 
   Widget _buildMiddleTabItem() {
