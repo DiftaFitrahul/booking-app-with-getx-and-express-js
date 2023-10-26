@@ -1,6 +1,10 @@
 import 'package:booking_app/getx/home/drawer_controller.dart';
 import 'package:booking_app/model/repository/home/event.dart';
+import 'package:booking_app/view/components/home/drawer_item.dart';
 import 'package:booking_app/view/components/home/header_event_title.dart';
+import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
+import 'package:booking_app/view/constants/home/user_image.dart';
+import 'package:booking_app/view/functions/home/offsett_fab_drawer_open.dart';
 
 import 'package:booking_app/view/pages/home/bottom_navigation_bar.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_item.dart';
@@ -37,47 +41,127 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final drawerController = Get.find<DrawerControllerGetx>();
     return Scaffold(
-      body: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        transform: Matrix4.translationValues(xOffset, yOffset, 0)
-          ..scale(isDrawerOpen ? 0.87 : 1.0),
-        child: InkWell(
-          onTap: () {
-            drawerController.toggleDrawer();
-            // print('makan');
-            setState(() {
-              isDrawerOpen = !isDrawerOpen;
-              xOffset = isDrawerOpen ? 230 : 0;
-              yOffset = isDrawerOpen ? 70 : 0;
-              xOffsetNavigationBar = isDrawerOpen ? 230 : 0;
-              yOffsetNavigationBar = isDrawerOpen ? -20 : 0;
-              xOffsetFloatingActionButton = isDrawerOpen ? 212 : 0;
-              yOffsetFloatingActionButton = isDrawerOpen ? -16 : 0;
-            });
-          },
-          child: ColoredBox(
-            color: const Color.fromARGB(255, 249, 249, 249),
-            child: CustomScrollView(slivers: [
-              SliverPersistentHeader(
-                delegate: HomeSliverAppbar(),
-                pinned: true,
+      body: Stack(
+        children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.only(left: 30, top: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Image.asset(
+                        userImagePath,
+                        height: 60,
+                        width: 60,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Ashfak Sayem',
+                      style: TextStyle(
+                        fontFamily: airBnbCereal,
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    DrawerItem(
+                      title: 'My Profile',
+                      icon: Icons.person_outline,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      badge: true,
+                      badgeNumber: 3,
+                      title: 'Message',
+                      icon: Icons.sms_outlined,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Calender',
+                      icon: Icons.calendar_today_outlined,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Bookmark',
+                      icon: CupertinoIcons.bookmark,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Contact Us',
+                      icon: Icons.email_outlined,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Settings',
+                      icon: Icons.settings_outlined,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Helps & FAQs',
+                      icon: Icons.help_outline_sharp,
+                      onTap: () {},
+                    ),
+                    DrawerItem(
+                      title: 'Sign Out',
+                      icon: Icons.logout,
+                      onTap: () {},
+                    ),
+                  ],
+                ),
               ),
-              HeaderEventTitle(
-                title: "Upcoming Events",
-                onTapped: () {},
-              ),
-              const ListEventCard(data: EventRepository.data),
-              const InviteFriendCard(),
-              HeaderEventTitle(
-                topPadding: 10,
-                title: "Nearby You",
-                onTapped: () {},
-              ),
-              const ListEventCard(data: EventRepository.nearbyYou),
-              const BottomHomePadding()
-            ]),
+            ),
           ),
-        ),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            transform: Matrix4.translationValues(xOffset, yOffset, 0)
+              ..scale(isDrawerOpen ? 0.87 : 1.0),
+            child: InkWell(
+              onTap: () {
+                drawerController.toggleDrawer();
+                setState(() {
+                  isDrawerOpen = !isDrawerOpen;
+                  xOffset = isDrawerOpen ? 230 : 0;
+                  yOffset = isDrawerOpen ? 70 : 0;
+                  xOffsetNavigationBar = isDrawerOpen ? 230 : 0;
+                  yOffsetNavigationBar = isDrawerOpen ? -33 : 0;
+                  xOffsetFloatingActionButton = isDrawerOpen
+                      ? getOffseetFABDrawerOpen(
+                          MediaQuery.sizeOf(context).width)
+                      : 0;
+                  yOffsetFloatingActionButton = isDrawerOpen ? -16 : 0;
+                });
+              },
+              child: ColoredBox(
+                color: const Color.fromARGB(255, 249, 249, 249),
+                child: CustomScrollView(slivers: [
+                  SliverPersistentHeader(
+                    delegate: HomeSliverAppbar(),
+                    pinned: true,
+                  ),
+                  HeaderEventTitle(
+                    title: "Upcoming Events",
+                    onTapped: () {},
+                  ),
+                  const ListEventCard(data: EventRepository.data),
+                  const InviteFriendCard(),
+                  HeaderEventTitle(
+                    topPadding: 10,
+                    title: "Nearby You",
+                    onTapped: () {},
+                  ),
+                  const ListEventCard(data: EventRepository.nearbyYou),
+                  const BottomHomePadding()
+                ]),
+              ),
+            ),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: AnimatedContainer(
