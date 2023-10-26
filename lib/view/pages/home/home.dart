@@ -4,7 +4,6 @@ import 'package:booking_app/view/components/drawer/upgrade_pro.dart';
 import 'package:booking_app/view/components/home/background_home_one.dart';
 import 'package:booking_app/view/components/home/background_home_two.dart';
 import 'package:booking_app/view/components/home/header_event_title.dart';
-import 'package:booking_app/view/functions/home/offsett_drawer_open.dart';
 import 'package:booking_app/view/pages/drawer/drawer.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_bar.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_item.dart';
