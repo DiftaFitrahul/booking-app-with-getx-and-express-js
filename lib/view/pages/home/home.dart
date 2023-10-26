@@ -4,7 +4,7 @@ import 'package:booking_app/view/components/home/drawer_item.dart';
 import 'package:booking_app/view/components/home/header_event_title.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/constants/home/drawer.dart';
-import 'package:booking_app/view/functions/home/offsett_fab_drawer_open.dart';
+import 'package:booking_app/view/functions/home/offsett_drawer_open.dart';
 
 import 'package:booking_app/view/pages/home/bottom_navigation_bar.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_item.dart';
@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
 
   double xOffset = 0;
   double yOffset = 0;
+  double zOffset = 0;
   double xOffsetNavigationBar = 0;
   double yOffsetNavigationBar = 0;
   double xOffsetFloatingActionButton = 0;
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final drawerController = Get.find<DrawerControllerGetx>();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           SafeArea(
@@ -150,19 +152,65 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          Obx(
+            () => AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                transform: Matrix4.translationValues(
+                    (xOffset - 35).clamp(0, 225),
+                    (yOffset + 60).clamp(0, 130),
+                    zOffset)
+                  ..scale(isDrawerOpen ? 0.81 : 1.0),
+                child: Container(
+                  height: double.infinity,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            drawerController.isDrawerOpen.value ? 33.0 : 0),
+                        bottomLeft: Radius.circular(
+                            drawerController.isDrawerOpen.value ? 33.0 : 0),
+                      ),
+                      color: const Color(0xFFBCBCBC).withOpacity(0.12)),
+                )),
+          ),
+          Obx(
+            () => AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                transform: Matrix4.translationValues(
+                    (xOffset - 20).clamp(0, 240),
+                    (yOffset + 40).clamp(0, 110),
+                    zOffset)
+                  ..scale(isDrawerOpen ? 0.87 : 1.0),
+                child: Container(
+                  height: double.infinity,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            drawerController.isDrawerOpen.value ? 33.0 : 0),
+                        bottomLeft: Radius.circular(
+                            drawerController.isDrawerOpen.value ? 33.0 : 0),
+                      ),
+                      color: const Color(0xFFBCBCBC).withOpacity(0.10)),
+                )),
+          ),
           AnimatedContainer(
             duration: const Duration(milliseconds: 300),
-            transform: Matrix4.translationValues(xOffset, yOffset, 0)
+            transform: Matrix4.translationValues(xOffset, yOffset, zOffset)
               ..scale(isDrawerOpen ? 0.87 : 1.0),
             child: InkWell(
               onTap: () {
                 drawerController.toggleDrawer();
                 setState(() {
                   isDrawerOpen = !isDrawerOpen;
-                  xOffset = isDrawerOpen ? 230 : 0;
+                  xOffset = isDrawerOpen ? 260 : 0;
                   yOffset = isDrawerOpen ? 70 : 0;
-                  xOffsetNavigationBar = isDrawerOpen ? 230 : 0;
-                  yOffsetNavigationBar = isDrawerOpen ? -33 : 0;
+                  zOffset = isDrawerOpen ? 1500 : 0;
+                  xOffsetNavigationBar = isDrawerOpen ? 260 : 0;
+                  yOffsetNavigationBar = isDrawerOpen
+                      ? getOffsetNavigationBarDraweOpen(
+                          MediaQuery.sizeOf(context).height)
+                      : 0;
                   xOffsetFloatingActionButton = isDrawerOpen
                       ? getOffseetFABDrawerOpen(
                           MediaQuery.sizeOf(context).width)
@@ -170,8 +218,16 @@ class _HomePageState extends State<HomePage> {
                   yOffsetFloatingActionButton = isDrawerOpen ? -16 : 0;
                 });
               },
-              child: ColoredBox(
-                color: const Color.fromARGB(255, 249, 249, 249),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 249, 249, 249),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                        drawerController.isDrawerOpen.value ? 33.0 : 0),
+                    topRight: Radius.circular(
+                        drawerController.isDrawerOpen.value ? 33.0 : 0),
+                  ),
+                ),
                 child: CustomScrollView(slivers: [
                   SliverPersistentHeader(
                     delegate: HomeSliverAppbar(),
@@ -200,7 +256,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         transform: Matrix4.translationValues(
-            xOffsetFloatingActionButton, yOffsetFloatingActionButton, 0)
+            xOffsetFloatingActionButton, yOffsetFloatingActionButton, zOffset)
           ..scale(isDrawerOpen ? 0.87 : 1.0),
         child: SizedBox(
           height: 70,
@@ -234,7 +290,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         transform: Matrix4.translationValues(
-            xOffsetNavigationBar, yOffsetNavigationBar, 0)
+            xOffsetNavigationBar, yOffsetNavigationBar, zOffset)
           ..scale(isDrawerOpen ? 0.87 : 1.0),
         child: FABBottomAppBar(
           backgroundColor: Colors.white,
