@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
             child: FABBottomAppBar(
               backgroundColor: Colors.white,
               centerItemText: null,
-              notchedShape: const CircularNotchedRectangle(),
+              notchedShape: null,
               color: Colors.grey,
               selectedColor: const Color(0xFF5669FF),
               onTabSelected: (index) {},
