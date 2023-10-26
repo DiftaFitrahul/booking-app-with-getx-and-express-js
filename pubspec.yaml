@@ -50,6 +50,8 @@ flutter:
     - assets/image/home/menu_icon.png
     - assets/image/home/user.png
     - assets/image/home/pro_icon.png
+    - assets/image/home/date.png
+    - assets/image/home/pin_map.png
     - assets/image/home/invite_friend.png
     - assets/image/home/events/event1.png
     - assets/image/home/events/event2.png
@@ -60,6 +62,7 @@ flutter:
     - assets/image/home/events/person2.png
     - assets/image/home/events/person3.png
     - assets/image/home/events/pin.png
+    - assets/image/home/events/organizer.png
 
   fonts:
     - family: AirbnbCereal

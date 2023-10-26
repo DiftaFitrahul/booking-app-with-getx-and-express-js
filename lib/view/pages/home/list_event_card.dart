@@ -1,5 +1,7 @@
 import 'package:booking_app/view/components/home/card_event.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ListEventCard extends StatelessWidget {
   const ListEventCard({super.key, required this.data});
@@ -23,7 +25,9 @@ class ListEventCard extends StatelessWidget {
             eventPath: data[index]['image'] ?? '',
             numberOfPeople: int.parse(data[index]['numberOfPeople'] ?? "0"),
             place: data[index]['place'] ?? '',
-            onTapped: () {},
+            onTapped: () {
+              Get.toNamed(RoutesName.event);
+            },
             onBookmarkTapped: () {},
           ),
         ),
