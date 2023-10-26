@@ -1,4 +1,4 @@
-import 'package:booking_app/getx/home/drawer_controller.dart';
+import 'package:booking_app/getx/home/open_drawer_controller.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/pages/home/bottom_navigation_item.dart';
 import 'package:flutter/material.dart';

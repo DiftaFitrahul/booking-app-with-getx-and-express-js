@@ -1,5 +1,5 @@
 import 'package:booking_app/getx/home/appbar_controller.dart';
-import 'package:booking_app/getx/home/drawer_controller.dart';
+import 'package:booking_app/getx/home/open_drawer_controller.dart';
 import 'package:booking_app/view/components/home/filter_appbar.dart';
 import 'package:booking_app/view/components/home/list_category_appbar.dart';
 import 'package:booking_app/view/components/home/search_appbar.dart';

@@ -1,7 +1,9 @@
+import 'package:booking_app/getx/home/open_drawer_controller.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/constants/home/icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TopWidgetAppbar extends StatelessWidget {
   const TopWidgetAppbar({super.key, required this.percentage});
@@ -9,6 +11,9 @@ class TopWidgetAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final heightScreen = MediaQuery.sizeOf(context).height;
+    final widthScreen = MediaQuery.sizeOf(context).width;
+    final drawerOpenController = Get.find<DrawerControllerGetx>();
     return Align(
         alignment: Alignment.topCenter,
         child: SafeArea(
@@ -19,7 +24,10 @@ class TopWidgetAppbar extends StatelessWidget {
               children: [
                 IconButton(
                   icon: Image.asset(HomeIcon.menu),
-                  onPressed: () {},
+                  onPressed: () {
+                    drawerOpenController.toggleDrawer(
+                        heightScreen: heightScreen, widthScreen: widthScreen);
+                  },
                 ),
                 AnimatedOpacity(
                   opacity: percentage,
