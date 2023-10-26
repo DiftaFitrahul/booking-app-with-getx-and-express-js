@@ -24,10 +24,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _selectedTab(int index) {
-    print(index);
-  }
-
   @override
   Widget build(BuildContext context) {
     final drawerOpenController = Get.find<DrawerControllerGetx>();
@@ -97,7 +93,7 @@ class _HomePageState extends State<HomePage> {
               notchedShape: const CircularNotchedRectangle(),
               color: Colors.grey,
               selectedColor: const Color(0xFF5669FF),
-              onTabSelected: _selectedTab,
+              onTabSelected: (index) {},
               items: [
                 FABBottomAppBarItem(
                     iconData: CupertinoIcons.compass_fill, text: 'Explore'),
