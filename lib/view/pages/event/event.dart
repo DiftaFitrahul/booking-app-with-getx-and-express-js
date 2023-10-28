@@ -3,6 +3,7 @@ import 'package:booking_app/view/components/event/important_box.dart';
 import 'package:booking_app/view/constants/event/asset.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/constants/home/event_image.dart';
+import 'package:booking_app/view/functions/event/bottom_shadow.dart';
 import 'package:booking_app/view/functions/event/trim_line_number_responsive.dart';
 import 'package:booking_app/view/pages/event/organizer_section.dart';
 import 'package:flutter/cupertino.dart';
@@ -248,21 +249,31 @@ class EventDetailPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: 105,
+                height: getHeightBottomShadow(screenHeight),
                 foregroundDecoration: BoxDecoration(
                     gradient: LinearGradient(
                         colors: [
-                          Colors.white.withOpacity(0.1),
-                          Colors.white.withOpacity(0.25),
-                          Colors.white.withOpacity(0.4),
+                          Colors.white.withOpacity(0),
+                          Colors.white.withOpacity(0.09),
+                          Colors.white.withOpacity(0.2),
+                          Colors.white.withOpacity(0.35),
+                          Colors.white.withOpacity(0.45),
                           Colors.white.withOpacity(0.6),
-                          Colors.white.withOpacity(0.7),
                           Colors.white.withOpacity(0.8),
                           Colors.white
                         ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        stops: const [0, 0.03, 0.05, 0.1, 0.15, 0.25, 0.5])),
+                        stops: const [
+                          0,
+                          0.025,
+                          0.05,
+                          0.075,
+                          0.1,
+                          0.15,
+                          0.25,
+                          0.5
+                        ])),
               ),
             ),
             Align(
