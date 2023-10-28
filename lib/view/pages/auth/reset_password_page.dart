@@ -1,4 +1,4 @@
-import 'package:booking_app/view/components/auth/button_auth_component.dart';
+import 'package:booking_app/view/components/auth/button_primary_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
@@ -77,9 +77,9 @@ class ResetPasswordPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              ButtonAuthComp(
+              ButtonPrimaryComp(
                   title: 'Send',
-                  onPress: () {
+                  onPressed: () {
                     Get.toNamed(RoutesName.verification);
                   }),
             ],

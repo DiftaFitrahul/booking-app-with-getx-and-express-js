@@ -1,11 +1,12 @@
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
-class ButtonAuthComp extends StatelessWidget {
+class ButtonPrimaryComp extends StatelessWidget {
   final String title;
-  final VoidCallback onPress;
+  final VoidCallback onPressed;
 
-  const ButtonAuthComp({super.key, required this.title, required this.onPress});
+  const ButtonPrimaryComp(
+      {super.key, required this.title, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class ButtonAuthComp extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: ElevatedButton(
-          onPressed: onPress,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),

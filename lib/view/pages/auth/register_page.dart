@@ -1,4 +1,4 @@
-import 'package:booking_app/view/components/auth/button_auth_component.dart';
+import 'package:booking_app/view/components/auth/button_primary_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
@@ -98,9 +98,9 @@ class RegisterPage extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    ButtonAuthComp(
+                    ButtonPrimaryComp(
                       title: 'Sign Up',
-                      onPress: () {
+                      onPressed: () {
                         Get.toNamed(RoutesName.verification);
                       },
                     ),

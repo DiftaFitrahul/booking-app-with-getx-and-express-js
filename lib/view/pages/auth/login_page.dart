@@ -1,4 +1,4 @@
-import 'package:booking_app/view/components/auth/button_auth_component.dart';
+import 'package:booking_app/view/components/auth/button_primary_component.dart';
 import 'package:booking_app/view/components/auth/form_auth_component.dart';
 import 'package:booking_app/view/components/auth/provider_button_component.dart';
 import 'package:booking_app/view/constants/auth/background_effect_const.dart';
@@ -139,9 +139,9 @@ class LoginPage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: screenHeight < 880 ? 10 : 20),
-                                ButtonAuthComp(
+                                ButtonPrimaryComp(
                                   title: 'Sign In',
-                                  onPress: () {
+                                  onPressed: () {
                                     Get.offNamed(RoutesName.home);
                                   },
                                 ),
