@@ -43,7 +43,7 @@ class EventDetailPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 13),
+                              horizontal: 16.0, vertical: 8),
                           child: SafeArea(
                             child: Row(
                               children: [

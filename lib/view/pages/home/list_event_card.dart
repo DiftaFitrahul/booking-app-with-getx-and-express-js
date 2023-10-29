@@ -26,7 +26,7 @@ class ListEventCard extends StatelessWidget {
             numberOfPeople: int.parse(data[index]['numberOfPeople'] ?? "0"),
             place: data[index]['place'] ?? '',
             onTapped: () {
-              Get.toNamed(RoutesName.event);
+              Get.toNamed(RoutesName.eventDetail);
             },
             onBookmarkTapped: () {},
           ),

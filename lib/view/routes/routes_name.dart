@@ -7,5 +7,7 @@ class RoutesName {
   static const String resetPassword = '/resetPasswordPage';
   static const String verification = '/verificationPage';
   static const String home = '/homePage';
-  static const String event = '/eventPage';
+  static const String events = '/eventsPage';
+  static const String eventDetail = '/eventDetailPage';
+  static const String main = '/mainPage';
 }

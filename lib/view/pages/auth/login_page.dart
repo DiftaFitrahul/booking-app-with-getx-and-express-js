@@ -142,7 +142,7 @@ class LoginPage extends StatelessWidget {
                                 ButtonPrimaryComp(
                                   title: 'Sign In',
                                   onPressed: () {
-                                    Get.offNamed(RoutesName.home);
+                                    Get.offNamed(RoutesName.main);
                                   },
                                 ),
                                 Padding(
