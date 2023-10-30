@@ -1,6 +1,7 @@
 import 'package:booking_app/getx/home/open_drawer_controller.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/constants/home/icon.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -71,7 +72,11 @@ class TopWidgetAppbar extends StatelessWidget {
                         opacity: percentage,
                         duration: const Duration(milliseconds: 100),
                         child: InkWell(
-                          onTap: percentage < 0.8 ? null : () {},
+                          onTap: percentage < 0.8
+                              ? null
+                              : () {
+                                  Get.toNamed(RoutesName.notification);
+                                },
                           child: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(

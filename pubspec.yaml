@@ -65,6 +65,7 @@ flutter:
     - assets/image/home/events/pin.png
     - assets/image/home/events/organizer.png
     - assets/image/events/no_event_image.png
+    - assets/image/events/notif.png
 
   fonts:
     - family: AirbnbCereal

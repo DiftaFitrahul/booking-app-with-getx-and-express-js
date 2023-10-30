@@ -8,6 +8,7 @@ import 'package:booking_app/view/pages/event/event_detail.dart';
 import 'package:booking_app/view/pages/home/home.dart';
 import 'package:booking_app/view/pages/intro/slider_page.dart';
 import 'package:booking_app/view/pages/main_page.dart';
+import 'package:booking_app/view/pages/notification/notification.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:get/get.dart';
 
@@ -47,5 +48,9 @@ class Routes {
       page: () => const MainPage(),
       binding: MainPageBinding(),
     ),
+    GetPage(
+      name: RoutesName.notification,
+      page: () => const NotificationPage(),
+    )
   ];
 }

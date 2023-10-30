@@ -10,4 +10,6 @@ class RoutesName {
   static const String events = '/eventsPage';
   static const String eventDetail = '/eventDetailPage';
   static const String main = '/mainPage';
+  static const String profile = '/profilePage';
+  static const String notification = '/notificationPage';
 }
