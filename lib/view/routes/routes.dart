@@ -4,6 +4,7 @@ import 'package:booking_app/view/pages/auth/login_page.dart';
 import 'package:booking_app/view/pages/auth/register_page.dart';
 import 'package:booking_app/view/pages/auth/reset_password_page.dart';
 import 'package:booking_app/view/pages/auth/verification_page.dart';
+import 'package:booking_app/view/pages/event/detail_organizer_event.dart';
 import 'package:booking_app/view/pages/event/event_detail.dart';
 import 'package:booking_app/view/pages/home/home.dart';
 import 'package:booking_app/view/pages/intro/slider_page.dart';
@@ -51,6 +52,10 @@ class Routes {
     GetPage(
       name: RoutesName.notification,
       page: () => const NotificationPage(),
+    ),
+    GetPage(
+      name: RoutesName.detailOrganizerEvent,
+      page: () => const DetailOrganizerEvent(),
     )
   ];
 }

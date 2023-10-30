@@ -12,4 +12,5 @@ class RoutesName {
   static const String main = '/mainPage';
   static const String profile = '/profilePage';
   static const String notification = '/notificationPage';
+  static const String detailOrganizerEvent = '/detailOrganizerEventPage';
 }
