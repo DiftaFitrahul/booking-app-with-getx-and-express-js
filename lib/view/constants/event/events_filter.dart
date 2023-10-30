@@ -1,0 +1,4 @@
+enum EventFilter {
+  upcoming,
+  pastEvents,
+}
