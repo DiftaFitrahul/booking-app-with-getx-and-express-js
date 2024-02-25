@@ -10,14 +10,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginPageNew extends StatefulWidget {
-  const LoginPageNew({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginPageNew> createState() => _LoginPageNewState();
+  State<LoginPage> createState() => _LoginPageNewState();
 }
 
-class _LoginPageNewState extends State<LoginPageNew> {
+class _LoginPageNewState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
@@ -166,7 +166,10 @@ class _LoginPageNewState extends State<LoginPageNew> {
                                         )
                                       ]),
                                       TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            context.pushNamed(
+                                                RoutesName.resetPassword);
+                                          },
                                           child: Text(
                                             'Forgot Password?',
                                             style: TextStyle(

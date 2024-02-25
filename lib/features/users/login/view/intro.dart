@@ -4,14 +4,14 @@ import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class IntroPageNew extends StatefulWidget {
-  const IntroPageNew({super.key});
+class IntroPage extends StatefulWidget {
+  const IntroPage({super.key});
 
   @override
-  State<IntroPageNew> createState() => _IntroPageState();
+  State<IntroPage> createState() => _IntroPageState();
 }
 
-class _IntroPageState extends State<IntroPageNew> {
+class _IntroPageState extends State<IntroPage> {
   late final PageController _pageController;
   final ValueNotifier<int> _currentPageIndex = ValueNotifier<int>(0);
   final _listImageIntro = [imageIntro1, imageIntro2, imageIntro3];

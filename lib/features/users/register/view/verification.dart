@@ -1,11 +1,12 @@
-import 'package:booking_app/view/components/auth/button_primary_component.dart';
-import 'package:booking_app/view/components/auth/otp_verification_field_component.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
-class VerificationPage extends StatelessWidget {
-  const VerificationPage({super.key});
+import '../../global/button_auth_comp.dart';
+
+class OTPVerificationPage extends StatelessWidget {
+  const OTPVerificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class VerificationPage extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 5.0),
                   child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        context.pop();
                       },
                       icon: const Icon(
                         Icons.arrow_back,
@@ -67,21 +68,19 @@ class VerificationPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  OTPVerificationComponent(),
-                  OTPVerificationComponent(),
-                  OTPVerificationComponent(),
-                  OTPVerificationComponent(
-                    nextFocus: false,
-                  ),
+                  _otpVerificationComp(context),
+                  _otpVerificationComp(context),
+                  _otpVerificationComp(context),
+                  _otpVerificationComp(context, nextFocus: true)
                 ],
               ),
               const SizedBox(
                 height: 40,
               ),
-              ButtonPrimaryComp(title: 'Continue', onPressed: () {}),
+              ButtonAuthComp(title: 'Continue', onPressed: () {}),
               const SizedBox(
                 height: 20,
               ),
@@ -112,6 +111,42 @@ class VerificationPage extends StatelessWidget {
           ),
         ),
       )),
+    );
+  }
+
+  Widget _otpVerificationComp(BuildContext context, {bool nextFocus = true}) {
+    return SizedBox(
+      height: 74,
+      width: 70,
+      child: TextFormField(
+        cursorHeight: 0,
+        cursorWidth: 0,
+        onChanged: (value) {
+          if (value.length == 1) {
+            if (nextFocus == true) {
+              FocusScope.of(context).nextFocus();
+            } else {
+              FocusScope.of(context).unfocus();
+            }
+          }
+        },
+        onSaved: (newValue) {},
+        decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(vertical: 17),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 1,
+                )),
+            hintText: '-'),
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(1),
+          FilteringTextInputFormatter.digitsOnly
+        ],
+      ),
     );
   }
 }

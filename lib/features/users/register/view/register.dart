@@ -2,19 +2,20 @@ import 'package:booking_app/features/users/global/button_auth_comp.dart';
 import 'package:booking_app/features/users/global/form_auth_comp.dart';
 import 'package:booking_app/features/users/global/provider_auth_button_comp.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
+import 'package:booking_app/view/routes/routes_name.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class RegisterPageNew extends StatefulWidget {
-  const RegisterPageNew({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<RegisterPageNew> createState() => _RegisterPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPageNew> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController _usernameController;
   late final TextEditingController _emailController;
@@ -169,6 +170,7 @@ class _RegisterPageState extends State<RegisterPageNew> {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text("Sukses Register")));
+                            context.pushNamed(RoutesName.verification);
                             return;
                           }
                           ScaffoldMessenger.of(context).showSnackBar(
