@@ -1,3 +1,4 @@
+import 'package:booking_app/constants/assets.dart';
 import 'package:booking_app/view/constants/intro/intro_text.dart';
 import 'package:booking_app/getx/intro/image_controller.dart';
 import 'package:booking_app/getx/intro/indicator_number.dart';
@@ -20,9 +21,9 @@ class _IntroPageState extends State<IntroPage> {
 
   @override
   void didChangeDependencies() {
-    precacheImage(imageController2.imageIntro[0].image, context);
-    precacheImage(imageController2.imageIntro[1].image, context);
-    precacheImage(imageController2.imageIntro[2].image, context);
+    precacheImage(Image.asset(imageIntro1).image, context);
+    precacheImage(Image.asset(imageIntro2).image, context);
+    precacheImage(Image.asset(imageIntro3).image, context);
     super.didChangeDependencies();
   }
 

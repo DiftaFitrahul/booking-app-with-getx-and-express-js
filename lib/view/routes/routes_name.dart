@@ -1,5 +1,10 @@
 class RoutesName {
-  const RoutesName._();
+  static final RoutesName _singleton = RoutesName._internal();
+
+  factory RoutesName() {
+    return _singleton;
+  }
+  RoutesName._internal();
 
   static const String intro = '/introPage';
   static const String login = '/loginPage';

@@ -1,15 +1,22 @@
-import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:flutter/material.dart';
 
-class FormAuthComp extends StatelessWidget {
+import '../../../view/constants/fonts/air_bnb_cereal.dart';
+
+class FormAuthComponent extends StatelessWidget {
   final TextEditingController formController;
   final String hintText;
   final Icon leadingIcon;
+  final TextInputType keyboardType;
   final IconButton? trailingButton;
-  const FormAuthComp(
+  final bool obscureText;
+  final String? Function(String?)? validator;
+  const FormAuthComponent(
       {super.key,
       required this.formController,
       required this.hintText,
+      this.keyboardType = TextInputType.text,
+      this.obscureText = false,
+      required this.validator,
       required this.leadingIcon,
       required this.trailingButton});
 
@@ -17,6 +24,12 @@ class FormAuthComp extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: formController,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
+      validator: validator,
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(

@@ -1,3 +1,6 @@
+import 'package:booking_app/features/users/login/view/intro.dart';
+import 'package:booking_app/features/users/login/view/login.dart';
+import 'package:booking_app/features/users/register/view/register.dart';
 import 'package:booking_app/view/bindings/intro_page.dart';
 import 'package:booking_app/view/bindings/main_page.dart';
 import 'package:booking_app/view/bindings/organizer.dart';
@@ -12,7 +15,9 @@ import 'package:booking_app/view/pages/intro/slider_page.dart';
 import 'package:booking_app/view/pages/main_page.dart';
 import 'package:booking_app/view/pages/notification/notification.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class Routes {
   const Routes._();
@@ -60,4 +65,46 @@ class Routes {
       binding: OrganizerBinding(),
     )
   ];
+}
+
+class GoRouteClass {
+  static final GoRouteClass _singleton = GoRouteClass._internal();
+
+  factory GoRouteClass() {
+    return _singleton;
+  }
+
+  GoRouteClass._internal();
+
+  static RouterConfig<Object>? routerConfig() {
+    return GoRouter(
+      initialLocation: RoutesName.intro,
+      routes: [
+        GoRoute(
+          name: RoutesName.intro,
+          path: RoutesName.intro,
+          builder: (context, state) {
+            return const IntroPageNew();
+          },
+        ),
+        GoRoute(
+          name: RoutesName.login,
+          path: RoutesName.login,
+          builder: (context, state) {
+            return const LoginPageNew();
+          },
+        ),
+        GoRoute(
+          name: RoutesName.register,
+          path: RoutesName.register,
+          builder: (context, state) {
+            return const RegisterPageNew();
+          },
+        )
+      ],
+      redirect: (context, state) {
+        return null;
+      },
+    );
+  }
 }

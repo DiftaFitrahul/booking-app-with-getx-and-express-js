@@ -17,12 +17,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
-      initialRoute: RoutesName.intro,
-      getPages: Routes.pages,
+      routerConfig: GoRouteClass.routerConfig(),
     );
   }
 }
