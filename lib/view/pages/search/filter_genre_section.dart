@@ -1,5 +1,5 @@
 import 'package:booking_app/getx/filter/genre_filter.dart';
-import 'package:booking_app/view/components/filter/genre_circle.dart';
+import 'package:booking_app/features/home/views/widgets/genre_circle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

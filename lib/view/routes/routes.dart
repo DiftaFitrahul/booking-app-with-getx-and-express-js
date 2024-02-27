@@ -1,3 +1,4 @@
+import 'package:booking_app/features/home/views/screen/home.dart';
 import 'package:booking_app/features/users/login/view/intro.dart';
 import 'package:booking_app/features/users/login/view/login.dart';
 import 'package:booking_app/features/users/login/view/reset_password.dart';
@@ -8,7 +9,6 @@ import 'package:booking_app/view/bindings/organizer.dart';
 
 import 'package:booking_app/view/pages/profile/detail_organizer_event.dart';
 import 'package:booking_app/view/pages/event/event_detail.dart';
-import 'package:booking_app/view/pages/home/home.dart';
 import 'package:booking_app/view/pages/main_page.dart';
 import 'package:booking_app/view/pages/notification/notification.dart';
 import 'package:booking_app/view/routes/routes_name.dart';
@@ -19,10 +19,6 @@ import 'package:go_router/go_router.dart';
 class Routes {
   const Routes._();
   static final pages = [
-    GetPage(
-      name: RoutesName.home,
-      page: () => const HomePage(),
-    ),
     GetPage(
       name: RoutesName.eventDetail,
       page: () => const EventDetailPage(),
@@ -90,6 +86,13 @@ class GoRouteClass {
           path: RoutesName.resetPassword,
           builder: (context, state) {
             return const ResetPasswordPage();
+          },
+        ),
+        GoRoute(
+          name: RoutesName.home,
+          path: RoutesName.home,
+          builder: (context, state) {
+            return const HomePage();
           },
         )
       ],

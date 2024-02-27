@@ -1,4 +1,4 @@
-import 'package:booking_app/view/components/home/category_appbar.dart';
+import 'package:booking_app/features/home/views/widgets/category_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

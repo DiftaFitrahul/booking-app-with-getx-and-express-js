@@ -1,4 +1,4 @@
-import 'package:booking_app/view/components/drawer/drawer_item.dart';
+import 'package:booking_app/features/home/views/widgets/drawer_item.dart';
 import 'package:booking_app/view/constants/fonts/air_bnb_cereal.dart';
 import 'package:booking_app/view/constants/home/drawer.dart';
 import 'package:flutter/cupertino.dart';

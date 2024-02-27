@@ -188,6 +188,7 @@ class _LoginPageNewState extends State<LoginPage> {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(const SnackBar(
                                               content: Text("Sukses Login")));
+                                      context.pushNamed(RoutesName.home);
                                       return;
                                     }
                                     ScaffoldMessenger.of(context).showSnackBar(
